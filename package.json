@@ -1,5 +1,5 @@
 {
-  "name": "AlyaaXzy",
+  "name": "Arull",
   "version": "1.5.0",
   "description": "WhatsApp Bot",
   "depecrated": false,
@@ -19,16 +19,16 @@
     "whatsapp",
     "js-whatsapp"
   ],
-  "homepage": "https://github.com/AlyaaXd/rfkbot",
+  "homepage": "https://github.com/Arullzzz/V2bot",
   "author": {
-    "name": "AlyaaXd"
+    "name": "Arull"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AlyaaXd/rfkbot.git"
+    "url": "git+https://github.com/Arullzzz/V2bot"
   },
   "bugs": {
-    "url": "https://github.com/AlyaaXd/rfkbot/issues"
+    "url": "https://github.com/Arullzzz/V2bot/issues"
   },
   "license": "GPL-3.0-or-later",
   "dependencies": {
