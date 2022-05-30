@@ -16,7 +16,7 @@ gc2 = ''
 gc3 = ''
 global.linkGC = ['https://chat.whatsapp.com/E5l0ofPuMxG3H8ZhMRyI7e', ''] // ganti jadi group lu
 global.owner = ['6285822347348','6285822347348'] // Put your number here //owner eval
-global.kontak = ['6285822347348','6285822347348'] //Ketika ada yang ngetik #owner
+global.kontak = ['6283843192208','6283843192208'] //Ketika ada yang ngetik #owner
 global.mods = ['0'] // Want some help?
 global.prems = ['6285822347348','6285822347348','6285822347348'] // Premium user has unlimited limit
 global.APIs = { // API Prefix
@@ -60,7 +60,7 @@ global.author = 'ArullBotz' // ganti aja
 bc = 'Arull' //Arullbotz Broadcast
 footer = '\n©Arull'
 namabot = 'ArullBotz'
-namalu = 'ArullBotz'
+namalu = 'Arull'
 
 
 // 
