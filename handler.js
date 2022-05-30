@@ -68,8 +68,8 @@ module.exports = {
             if (!isNumber(user.anakanjing)) user.anakanjing = 0
             if (!isNumber(user.makananpet)) user.makananpet = 0
 
-            if (!isNumber(user.antispam)) user.antispam = 0
-            if (!isNumber(user.antispamlastclaim)) user.antispamlastclaim = 0
+            if (!isNumber(user.antispam)) user.antispam = 3
+            if (!isNumber(user.antispamlastclaim)) user.antispamlastclaim = 3
 
             if (!isNumber(user.kayu)) user.kayu = 0
             if (!isNumber(user.batu)) user.batu = 0
@@ -102,7 +102,7 @@ module.exports = {
             if (!isNumber(user.lasthunt)) user.lasthunt = 0
             if (!isNumber(user.lastweekly)) user.lastweekly = 0
             if (!isNumber(user.lastmonthly)) user.lastmontly = 0
-            if (!('registered' in user)) user.registered = true
+            if (!('registered' in user)) user.registered = false
             if (!user.registered) {
                 if (!('name' in user)) user.name = this.getName(m.sender)
                 if (!isNumber(user.age)) user.age = -1
@@ -159,8 +159,8 @@ module.exports = {
             anakrubah: 0,
             anakanjing: 0,
             makananpet: 0,
-            antispam: 5,
-            antispamlastclaim: 5,
+            antispam: 3,
+            antispamlastclaim: 3,
             kayu: 0,
             batu: 0,
             string: 0,
@@ -184,7 +184,7 @@ module.exports = {
             serial: serial,
             regTime: -1,
             autolevelup: true,
-            lastIstigfar: 5,
+            lastIstigfar: 3,
         }
 
         let chat = global.db.data.chats[m.chat]
@@ -208,8 +208,8 @@ module.exports = {
           isBanned: false,
           welcome: true,
           detect: true,
-          sWelcome: 'true',
-          sBye: 'true',
+          sWelcome: 'false',
+          sBye: 'false',
           sPromote: 'true',
           sDemote: 'true',
           descUpdate: true,
