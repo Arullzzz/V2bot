@@ -225,9 +225,9 @@ module.exports = {
         if (typeof settings !== 'object') global.db.data.settings[this.user.jid] = {}
         if (settings) {
           if (!'anon' in settings) settings.anon = true
-          if (!'anticall' in settings) settings.anticall = false
-          if (!'antispam' in settings) settings.antispam = false
-          if (!'antitroli' in settings) settings.antitroli = false
+          if (!'anticall' in settings) settings.anticall = true
+          if (!'antispam' in settings) settings.antispam = true
+          if (!'antitroli' in settings) settings.antitroli = true
           if (!'backup' in settings) settings.backup = false
           if (!isNumber(settings.backupDB)) settings.backupDB = 0
           if (!'groupOnly' in settings) settings.groupOnly = false
@@ -236,9 +236,9 @@ module.exports = {
           if (!isNumber(settings.status)) settings.status = 0
         } else global.db.data.settings[this.user.jid] = {
           anon: true,
-          anticall: false,
-          antispam: false,
-          antitroli: false,
+          anticall: true,
+          antispam: true,
+          antitroli: true,
           backup: false,
           backupDB: 0,
           groupOnly: false,
