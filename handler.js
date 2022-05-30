@@ -56,7 +56,7 @@ module.exports = {
             if (!isNumber(user.anjing)) user.anjing = 0
             if (!isNumber(user.anjinglastclaim)) user.anjinglastclaim = 0
 
-            if (!'banned' in user) user.banned = true
+            if (!'banned' in user) user.banned = false
             if (!isNumber(user.warn)) user.warn = 0
 
             if (!isNumber(user.afk)) user.afk = -1
@@ -190,7 +190,7 @@ module.exports = {
         let chat = global.db.data.chats[m.chat]
         if (typeof chat !== 'object') global.db.data.chats[m.chat] = {}
         if (chat) {
-          if (!('isBanned' in chat)) chat.isBanned = true
+          if (!('isBanned' in chat)) chat.isBanned = false
           if (!('welcome' in chat)) chat.welcome = false
           if (!('detect' in chat)) chat.detect = false
           if (!('sWelcome' in chat)) chat.sWelcome = 'false'
@@ -205,7 +205,7 @@ module.exports = {
           if (!('antiLink' in chat)) chat.antiLink = false
           if (!('viewonce' in chat)) chat.viewonce = false
         } else global.db.data.chats[m.chat] = {
-          isBanned: true,
+          isBanned: false,
           welcome: false,
           detect: false,
           sWelcome: 'false',
