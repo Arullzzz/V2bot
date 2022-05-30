@@ -569,12 +569,12 @@ Untuk mematikan fitur ini, ketik
 global.dfail = (type, m, conn) => {
 	let name = conn.getName(m.sender)
   let msg = {
-    rowner: `❌Perintah ditolak oleh ArullBotz❌\n\nSilahkan hubungi @${global.kontak[0].split`@`[0]}`,
-    owner: `❌⚠️Perintah ditolak oleh ArullBotz⚠️❌\n\nSilahkan hubungi @${global.kontak[0].split`@`[0]}`,
-    mods: `❌Perintah ditolak oleh ArullBotz❌\n\nSilahkan hubungi @${global.kontak[0].split`@`[0]}`,
+    rowner: `❌Perintah ditolak❌\n\nSilahkan hubungi @${global.kontak[0].split`@`[0]}`,
+    owner: `❌⚠️Perintah ditolak⚠️❌\n\nSilahkan hubungi @${global.kontak[0].split`@`[0]}`,
+    mods: `❌Perintah ditolak❌\n\nSilahkan hubungi @${global.kontak[0].split`@`[0]}`,
     premium: '❌Perintah Ini khusus pengguna _*Premium*_ !',
     group: 'Perintah ini hanya dapat digunakan di grup!',
-    private: '❌Perintah ditolak oleh ArullBotz❌\n\nGunakan Perintah ini di Chat Pribadi bot',
+    private: '❌Perintah ditolak❌\n\nGunakan Perintah ini di Chat Pribadi bot',
     admin: 'Perintah ini hanya untuk *Admin* grup!',
     nsfw: `Perintah ini hanya bisa diaktifkan oleh @${global.kontak[0].split`@`[0]}`,
     botAdmin: 'Jadikan Bot sebagai admin untuk menggunakan perintah ini\n\nDenger ya dekkk!!!\nApakah orang yang tidak menjadi admin bisa menambahkan member???!!!!!',
