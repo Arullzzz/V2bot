@@ -1,6 +1,6 @@
 {
   "name": "Arull",
-  "version": "1.5.0",
+  "version": ,
   "description": "ArullBotz",
   "depecrated": false,
   "main": "index.js",
@@ -20,7 +20,7 @@
     "js-whatsapp"
   ],
   "homepage": "https://github.com/Arullzzz/V2bot",
-  "author": {
+  "author": {Arull
     "name": "Arull"
   },
   "repository": {
