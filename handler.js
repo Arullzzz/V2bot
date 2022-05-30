@@ -56,7 +56,7 @@ module.exports = {
             if (!isNumber(user.anjing)) user.anjing = 0
             if (!isNumber(user.anjinglastclaim)) user.anjinglastclaim = 0
 
-            if (!'banned' in user) user.banned = false
+            if (!'banned' in user) user.banned = true
             if (!isNumber(user.warn)) user.warn = 0
 
             if (!isNumber(user.afk)) user.afk = -1
@@ -190,7 +190,7 @@ module.exports = {
         let chat = global.db.data.chats[m.chat]
         if (typeof chat !== 'object') global.db.data.chats[m.chat] = {}
         if (chat) {
-          if (!('isBanned' in chat)) chat.isBanned = false
+          if (!('isBanned' in chat)) chat.isBanned = true
           if (!('welcome' in chat)) chat.welcome = false
           if (!('detect' in chat)) chat.detect = false
           if (!('sWelcome' in chat)) chat.sWelcome = 'false'
@@ -200,12 +200,12 @@ module.exports = {
           if (!('descUpdate' in chat)) chat.descUpdate = true
           if (!('delete' in chat)) chat.delete = false
           if (!('antiBadword' in chat)) chat.antiBadword = false
-          if (!('rpg' in chat)) chat.delete = false
-          if (!('nsfw' in chat)) chat.delete = false
+          if (!('rpg' in chat)) chat.delete = true
+          if (!('nsfw' in chat)) chat.delete = true
           if (!('antiLink' in chat)) chat.antiLink = false
           if (!('viewonce' in chat)) chat.viewonce = false
         } else global.db.data.chats[m.chat] = {
-          isBanned: false,
+          isBanned: true,
           welcome: false,
           detect: false,
           sWelcome: 'false',
@@ -213,7 +213,7 @@ module.exports = {
           sPromote: 'false',
           sDemote: 'false',
           descUpdate: true,
-          delete: false,
+          delete: true,
           rpg: true,
           nsfw: false,
           antiBadword: false,
@@ -225,9 +225,9 @@ module.exports = {
         if (typeof settings !== 'object') global.db.data.settings[this.user.jid] = {}
         if (settings) {
           if (!'anon' in settings) settings.anon = true
-          if (!'anticall' in settings) settings.anticall = true
-          if (!'antispam' in settings) settings.antispam = true
-          if (!'antitroli' in settings) settings.antitroli = true
+          if (!'anticall' in settings) settings.anticall = false
+          if (!'antispam' in settings) settings.antispam = false
+          if (!'antitroli' in settings) settings.antitroli = false
           if (!'backup' in settings) settings.backup = false
           if (!isNumber(settings.backupDB)) settings.backupDB = 0
           if (!'groupOnly' in settings) settings.groupOnly = false
@@ -236,9 +236,9 @@ module.exports = {
           if (!isNumber(settings.status)) settings.status = 0
         } else global.db.data.settings[this.user.jid] = {
           anon: true,
-          anticall: true,
-          antispam: true,
-          antitroli: true,
+          anticall: false,
+          antispam: false,
+          antitroli: false,
           backup: false,
           backupDB: 0,
           groupOnly: false,
