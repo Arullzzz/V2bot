@@ -193,32 +193,32 @@ module.exports = {
           if (!('isBanned' in chat)) chat.isBanned = false
           if (!('welcome' in chat)) chat.welcome = false
           if (!('detect' in chat)) chat.detect = false
-          if (!('sWelcome' in chat)) chat.sWelcome = ''
-          if (!('sBye' in chat)) chat.sBye = ''
-          if (!('sPromote' in chat)) chat.sPromote = ''
-          if (!('sDemote' in chat)) chat.sDemote = ''
+          if (!('sWelcome' in chat)) chat.sWelcome = 'false'
+          if (!('sBye' in chat)) chat.sBye = 'false'
+          if (!('sPromote' in chat)) chat.sPromote = 'false'
+          if (!('sDemote' in chat)) chat.sDemote = 'false'
           if (!('descUpdate' in chat)) chat.descUpdate = true
           if (!('delete' in chat)) chat.delete = false
-          if (!('antiBadword' in chat)) chat.antiBadword = true
-          if (!('rpg' in chat)) chat.delete = true
+          if (!('antiBadword' in chat)) chat.antiBadword = false
+          if (!('rpg' in chat)) chat.delete = false
           if (!('nsfw' in chat)) chat.delete = false
           if (!('antiLink' in chat)) chat.antiLink = false
-          if (!('viewonce' in chat)) chat.viewonce = true
+          if (!('viewonce' in chat)) chat.viewonce = false
         } else global.db.data.chats[m.chat] = {
           isBanned: false,
           welcome: false,
           detect: false,
-          sWelcome: '',
-          sBye: '',
-          sPromote: '',
-          sDemote: '',
+          sWelcome: 'false',
+          sBye: 'false',
+          sPromote: 'false',
+          sDemote: 'false',
           descUpdate: true,
           delete: false,
           rpg: true,
           nsfw: false,
-          antiBadword: true,
+          antiBadword: false,
           antiLink: false,
-          viewonce: true,
+          viewonce: false,
         }
         
                 let settings = global.db.data.settings[this.user.jid]
@@ -242,7 +242,7 @@ module.exports = {
           backup: false,
           backupDB: 0,
           groupOnly: false,
-          jadibot: false,
+          jadibot: true,
           onsfw: true,
           status: 0,
         }
