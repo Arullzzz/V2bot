@@ -159,8 +159,8 @@ module.exports = {
             anakrubah: 0,
             anakanjing: 0,
             makananpet: 0,
-            antispam: 0,
-            antispamlastclaim: 0,
+            antispam: 5,
+            antispamlastclaim: 5,
             kayu: 0,
             batu: 0,
             string: 0,
@@ -178,47 +178,47 @@ module.exports = {
             lasthunt: 0,
             lastweekly: 0,
             lastmonthly: 0,
-            registered: false,
+            registered: true,
             name: this.getName(m.sender),
             age: -1,
             serial: serial,
             regTime: -1,
             autolevelup: true,
-            lastIstigfar: 0,
+            lastIstigfar: 5,
         }
 
         let chat = global.db.data.chats[m.chat]
         if (typeof chat !== 'object') global.db.data.chats[m.chat] = {}
         if (chat) {
           if (!('isBanned' in chat)) chat.isBanned = false
-          if (!('welcome' in chat)) chat.welcome = false
-          if (!('detect' in chat)) chat.detect = false
-          if (!('sWelcome' in chat)) chat.sWelcome = 'false'
-          if (!('sBye' in chat)) chat.sBye = 'false'
-          if (!('sPromote' in chat)) chat.sPromote = 'false'
-          if (!('sDemote' in chat)) chat.sDemote = 'false'
+          if (!('welcome' in chat)) chat.welcome = true
+          if (!('detect' in chat)) chat.detect = true
+          if (!('sWelcome' in chat)) chat.sWelcome = 'true'
+          if (!('sBye' in chat)) chat.sBye = 'true'
+          if (!('sPromote' in chat)) chat.sPromote = 'true'
+          if (!('sDemote' in chat)) chat.sDemote = 'true'
           if (!('descUpdate' in chat)) chat.descUpdate = true
-          if (!('delete' in chat)) chat.delete = false
-          if (!('antiBadword' in chat)) chat.antiBadword = false
+          if (!('delete' in chat)) chat.delete = true
+          if (!('antiBadword' in chat)) chat.antiBadword = true
           if (!('rpg' in chat)) chat.delete = true
           if (!('nsfw' in chat)) chat.delete = true
-          if (!('antiLink' in chat)) chat.antiLink = false
-          if (!('viewonce' in chat)) chat.viewonce = false
+          if (!('antiLink' in chat)) chat.antiLink = true
+          if (!('viewonce' in chat)) chat.viewonce = true
         } else global.db.data.chats[m.chat] = {
           isBanned: false,
-          welcome: false,
-          detect: false,
-          sWelcome: 'false',
-          sBye: 'false',
-          sPromote: 'false',
-          sDemote: 'false',
+          welcome: true,
+          detect: true,
+          sWelcome: 'true',
+          sBye: 'true',
+          sPromote: 'true',
+          sDemote: 'true',
           descUpdate: true,
           delete: true,
           rpg: true,
           nsfw: false,
-          antiBadword: false,
-          antiLink: false,
-          viewonce: false,
+          antiBadword: true,
+          antiLink: true,
+          viewonce: true,
         }
         
                 let settings = global.db.data.settings[this.user.jid]
@@ -229,22 +229,22 @@ module.exports = {
           if (!'antispam' in settings) settings.antispam = true
           if (!'antitroli' in settings) settings.antitroli = true
           if (!'backup' in settings) settings.backup = false
-          if (!isNumber(settings.backupDB)) settings.backupDB = 0
+          if (!isNumber(settings.backupDB)) settings.backupDB = 5
           if (!'groupOnly' in settings) settings.groupOnly = false
-          if (!'jadibot' in settings) settings.groupOnly = false
+          if (!'jadibot' in settings) settings.groupOnly = true
           if (!'nsfw' in settings) settings.nsfw = true
-          if (!isNumber(settings.status)) settings.status = 0
+          if (!isNumber(settings.status)) settings.status = 5
         } else global.db.data.settings[this.user.jid] = {
           anon: true,
           anticall: true,
           antispam: true,
           antitroli: true,
           backup: false,
-          backupDB: 0,
+          backupDB: 5,
           groupOnly: false,
           jadibot: true,
           onsfw: true,
-          status: 0,
+          status: 5,
         }
       } catch (e) {
         console.error(e)
@@ -540,7 +540,7 @@ module.exports = {
 Terdeteksi @${m.participant.split`@`[0]} telah menghapus pesan
 
 Untuk mematikan fitur ini, ketik
-*.disable delete*
+*. enable delete*
 `.trim(), m.message, {
       contextInfo: {
         mentionedJid: [m.participant]
@@ -569,16 +569,16 @@ Untuk mematikan fitur ini, ketik
 global.dfail = (type, m, conn) => {
 	let name = conn.getName(m.sender)
   let msg = {
-    rowner: `❌Perintah ditolak❌\n\nSilahkan hubungi @${global.kontak[0].split`@`[0]}`,
-    owner: `❌⚠️Perintah ditolak⚠️❌\n\nSilahkan hubungi @${global.kontak[0].split`@`[0]}`,
-    mods: `❌Perintah ditolak❌\n\nSilahkan hubungi @${global.kontak[0].split`@`[0]}`,
+    rowner: `❌Perintah ditolak oleh ArullBotz❌\n\nSilahkan hubungi @${global.kontak[0].split`@`[0]}`,
+    owner: `❌⚠️Perintah ditolak oleh ArullBotz⚠️❌\n\nSilahkan hubungi @${global.kontak[0].split`@`[0]}`,
+    mods: `❌Perintah ditolak oleh ArullBotz❌\n\nSilahkan hubungi @${global.kontak[0].split`@`[0]}`,
     premium: '❌Perintah Ini khusus pengguna _*Premium*_ !',
     group: 'Perintah ini hanya dapat digunakan di grup!',
-    private: '❌Perintah ditolak❌\n\nGunakan Perintah ini di Chat Pribadi bot',
+    private: '❌Perintah ditolak oleh ArullBotz❌\n\nGunakan Perintah ini di Chat Pribadi bot',
     admin: 'Perintah ini hanya untuk *Admin* grup!',
     nsfw: `Perintah ini hanya bisa diaktifkan oleh @${global.kontak[0].split`@`[0]}`,
     botAdmin: 'Jadikan Bot sebagai admin untuk menggunakan perintah ini\n\nDenger ya dekkk!!!\nApakah orang yang tidak menjadi admin bisa menambahkan member???!!!!!',
-    unreg: `Silahkan daftar untuk menggunakan fitur ini dengan cara mengetik:\n\n*#daftar nama.umur*\n\nContoh: *#daftar nama.16*`
+    unreg: `Silahkan daftar untuk menggunakan fitur ini dengan cara mengetik:\n\n*#nama.umur*\n\nContoh: *#Arull.18*`
   }[type]
   if (msg) return m.reply(msg)
 }
