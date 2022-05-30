@@ -102,7 +102,7 @@ module.exports = {
             if (!isNumber(user.lasthunt)) user.lasthunt = 0
             if (!isNumber(user.lastweekly)) user.lastweekly = 0
             if (!isNumber(user.lastmonthly)) user.lastmontly = 0
-            if (!('registered' in user)) user.registered = false
+            if (!('registered' in user)) user.registered = true
             if (!user.registered) {
                 if (!('name' in user)) user.name = this.getName(m.sender)
                 if (!isNumber(user.age)) user.age = -1
@@ -178,7 +178,7 @@ module.exports = {
             lasthunt: 0,
             lastweekly: 0,
             lastmonthly: 0,
-            registered: true,
+            registered: false,
             name: this.getName(m.sender),
             age: -1,
             serial: serial,
